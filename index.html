@@ -5,19 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Pulse</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sp-blue': '#1673b2',
+                        'sp-purple': '#632599',
+                        'sp-pink': '#d65389',
+                        'sp-orange': '#ed814a',
+                        'sp-dark': '#1e293b',
+                        'sp-light-bg': '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f7f4;
-            color: #3f3c3a;
+            background-color: #f8fafc;
+            color: #1e293b;
         }
         .container {
             max-width: 1400px;
         }
         .bg-gradient-hero {
-            background-image: linear-gradient(135deg, #f8f7f4 0%, #e7e5e4 100%);
+            background-image: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 100%);
         }
         .service-card, .pricing-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -42,36 +57,36 @@
     <!-- Navigation -->
     <header class="shadow-hero sticky top-0 z-50 bg-white/80 backdrop-blur-sm">
         <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-gray-800 hidden sm:block">
-                <img src="social-pulse-logo.png" alt="Social Pulse Logo" class="h-16">
+            <a href="#" class="text-xl font-bold hidden sm:block">
+                <img src="social-pulse-logo.png" alt="Social Pulse Logo" class="w-56 h-auto">
             </a>
             <div class="flex-grow flex justify-center sm:hidden">
                  <a href="#">
-                    <img src="social-pulse-logo.png" alt="Social Pulse Logo" class="h-16">
+                    <img src="social-pulse-logo.png" alt="Social Pulse Logo" class="w-48 h-auto">
                 </a>
             </div>
             <div class="flex items-center space-x-6 hidden sm:flex">
-                <a href="#services" class="text-gray-600 hover:text-teal-600 transition duration-300">Services</a>
-                <a href="#pricing" class="text-gray-600 hover:text-teal-600 transition duration-300">Pricing</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-teal-600 transition duration-300">Portfolio</a>
-                <a href="#contact" class="px-4 py-2 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition duration-300 text-sm font-semibold">Get Started</a>
+                <a href="#services" class="text-sp-dark hover:text-sp-blue transition duration-300">Services</a>
+                <a href="#pricing" class="text-sp-dark hover:text-sp-blue transition duration-300">Pricing</a>
+                <a href="#portfolio" class="text-sp-dark hover:text-sp-blue transition duration-300">Portfolio</a>
+                <a href="#contact" class="px-4 py-2 bg-sp-blue text-white rounded-full hover:bg-sp-purple transition duration-300 text-sm font-semibold">Get Started</a>
             </div>
-            <button id="mobile-menu-btn" class="sm:hidden text-gray-600 hover:text-teal-600 text-2xl focus:outline-none">&#9776;</button>
+            <button id="mobile-menu-btn" class="sm:hidden text-sp-dark hover:text-sp-blue text-2xl focus:outline-none">&#9776;</button>
         </nav>
         <div id="mobile-menu" class="mobile-menu hidden w-full bg-white sm:hidden shadow-md">
-            <a href="#services" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-100 transition duration-300">Services</a>
-            <a href="#pricing" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-100 transition duration-300">Pricing</a>
-            <a href="#portfolio" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-100 transition duration-300">Portfolio</a>
-            <a href="#contact" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-100 transition duration-300">Get Started</a>
+            <a href="#services" class="block py-4 px-6 text-center text-sp-dark hover:bg-gray-100 transition duration-300">Services</a>
+            <a href="#pricing" class="block py-4 px-6 text-center text-sp-dark hover:bg-gray-100 transition duration-300">Pricing</a>
+            <a href="#portfolio" class="block py-4 px-6 text-center text-sp-dark hover:bg-gray-100 transition duration-300">Portfolio</a>
+            <a href="#contact" class="block py-4 px-6 text-center text-sp-dark hover:bg-gray-100 transition duration-300">Get Started</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="bg-gradient-hero py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Your Digital Story. <br class="hidden md:inline">Brilliantly Told.</h1>
-            <p class="mt-6 md:text-xl text-gray-600 max-w-3xl mx-auto">We are a Chennai-based digital marketing partner, specializing in creating powerful online presences for individuals and brands through social media, modern web design, and captivating video content.</p>
-            <a href="#contact" class="mt-8 inline-block px-8 py-3 bg-teal-600 text-white font-semibold rounded-full shadow-lg hover:bg-teal-700 transition-transform hover:scale-105">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-sp-dark leading-tight">Your Digital Story. <br class="hidden md:inline">Brilliantly Told.</h1>
+            <p class="mt-6 md:text-xl text-sp-dark max-w-3xl mx-auto">We are a Chennai-based digital marketing partner, specializing in creating powerful online presences for individuals and brands through social media, modern web design, and captivating video content.</p>
+            <a href="#contact" class="mt-8 inline-block px-8 py-3 bg-sp-blue text-white font-semibold rounded-full shadow-lg hover:bg-sp-purple transition-transform hover:scale-105">
                 Elevate Your Brand
             </a>
         </div>
@@ -81,14 +96,14 @@
     <section id="services" class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Our Expertise</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We offer a full suite of services designed to build and grow your online presence, from foundational content creation to advanced strategic execution.</p>
+                <h2 class="text-3xl font-bold text-sp-dark">Our Expertise</h2>
+                <p class="mt-4 text-sp-dark max-w-2xl mx-auto">We offer a full suite of services designed to build and grow your online presence, from foundational content creation to advanced strategic execution.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-teal-100 text-teal-600 rounded-full mb-4 text-4xl mx-auto">❖</div>
-                    <h3 class="text-2xl font-semibold text-gray-800">Social Media Management</h3>
-                    <ul class="mt-4 text-gray-600 text-left space-y-2">
+                    <div class="p-4 bg-gray-200 text-sp-blue rounded-full mb-4 text-4xl mx-auto">❖</div>
+                    <h3 class="text-2xl font-semibold text-sp-dark">Social Media Management</h3>
+                    <ul class="mt-4 text-sp-dark text-left space-y-2">
                         <li>&#10003; Page Management (YouTube, Meta, LinkedIn)</li>
                         <li>&#10003; Content Creation & Scheduling</li>
                         <li>&#10003; Community Engagement & Moderation</li>
@@ -96,9 +111,9 @@
                     </ul>
                 </div>
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-teal-100 text-teal-600 rounded-full mb-4 text-4xl mx-auto">◎</div>
-                    <h3 class="text-2xl font-semibold text-gray-800">Web Design & Development</h3>
-                    <ul class="mt-4 text-gray-600 text-left space-y-2">
+                    <div class="p-4 bg-gray-200 text-sp-blue rounded-full mb-4 text-4xl mx-auto">◎</div>
+                    <h3 class="text-2xl font-semibold text-sp-dark">Web Design & Development</h3>
+                    <ul class="mt-4 text-sp-dark text-left space-y-2">
                         <li>&#10003; AI-Assisted Single-Page Website Design</li>
                         <li>&#10003; HTML-Based Dynamic Site Building</li>
                         <li>&#10003; Responsive Mobile-First Design</li>
@@ -106,9 +121,9 @@
                     </ul>
                 </div>
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-teal-100 text-teal-600 rounded-full mb-4 text-4xl mx-auto">▶</div>
-                    <h3 class="text-2xl font-semibold text-gray-800">Video & Content Production</h3>
-                    <ul class="mt-4 text-gray-600 text-left space-y-2">
+                    <div class="p-4 bg-gray-200 text-sp-blue rounded-full mb-4 text-4xl mx-auto">▶</div>
+                    <h3 class="text-2xl font-semibold text-sp-dark">Video & Content Production</h3>
+                    <ul class="mt-4 text-sp-dark text-left space-y-2">
                         <li>&#10003; Long-Format Video Editing (YouTube)</li>
                         <li>&#10003; Short-Form Video Editing (Reels, Shorts, TikTok)</li>
                         <li>&#10003; Podcast & Audio Editing</li>
@@ -116,9 +131,9 @@
                     </ul>
                 </div>
                  <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-teal-100 text-teal-600 rounded-full mb-4 text-4xl mx-auto">&#9733;</div>
-                    <h3 class="text-2xl font-semibold text-gray-800">Complementary Services</h3>
-                    <ul class="mt-4 text-gray-600 text-left space-y-2">
+                    <div class="p-4 bg-gray-200 text-sp-blue rounded-full mb-4 text-4xl mx-auto">&#9733;</div>
+                    <h3 class="text-2xl font-semibold text-sp-dark">Complementary Services</h3>
+                    <ul class="mt-4 text-sp-dark text-left space-y-2">
                         <li>&#10003; Paid Advertising Management (Meta, Google)</li>
                         <li>&#10003; Content Strategy & Planning</li>
                         <li>&#10003; Professional Copywriting</li>
@@ -133,53 +148,53 @@
     <section id="pricing" class="bg-gray-100 py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Simple & Transparent Pricing</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Our tiered packages are designed to match your growth stage, from individual creators to established brands. Choose the plan that best fits your needs.</p>
+                <h2 class="text-3xl font-bold text-sp-dark">Simple & Transparent Pricing</h2>
+                <p class="mt-4 text-sp-dark max-w-2xl mx-auto">Our tiered packages are designed to match your growth stage, from individual creators to established brands. Choose the plan that best fits your needs.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <h3 class="text-2xl font-semibold text-gray-800">Starter</h3>
-                    <p class="mt-2 text-gray-500">For Individuals & Solopreneurs</p>
+                    <h3 class="text-2xl font-semibold text-sp-dark">Starter</h3>
+                    <p class="mt-2 text-sp-dark">For Individuals & Solopreneurs</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-gray-900">₹8k</span>
-                        <span class="text-lg font-medium text-gray-500">/mo</span>
+                        <span class="text-4xl font-bold text-sp-dark">₹8k</span>
+                        <span class="text-lg font-medium text-sp-dark">/mo</span>
                     </div>
-                    <ul class="space-y-4 text-gray-600 flex-grow text-left">
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Social Media Management (2 Platforms)</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> 8 Posts/Month</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Basic Content Creation</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Monthly Analytics Report</li>
+                    <ul class="space-y-4 text-sp-dark flex-grow text-left">
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Social Media Management (2 Platforms)</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> 8 Posts/Month</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Basic Content Creation</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Monthly Analytics Report</li>
                     </ul>
                 </div>
-                <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center ring-2 ring-teal-500 relative">
+                <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center ring-2 ring-sp-blue relative">
                      <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                        <span class="inline-flex items-center rounded-full bg-teal-500 px-4 py-1 text-sm font-medium text-white">Most Popular</span>
+                        <span class="inline-flex items-center rounded-full bg-sp-blue px-4 py-1 text-sm font-medium text-white">Most Popular</span>
                     </div>
-                    <h3 class="text-2xl font-semibold text-gray-800">Growth</h3>
-                    <p class="mt-2 text-gray-500">For SMEs & Startups</p>
+                    <h3 class="text-2xl font-semibold text-sp-dark">Growth</h3>
+                    <p class="mt-2 text-sp-dark">For SMEs & Startups</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-gray-900">₹25k</span>
-                        <span class="text-lg font-medium text-gray-500">/mo</span>
+                        <span class="text-4xl font-bold text-sp-dark">₹25k</span>
+                        <span class="text-lg font-medium text-sp-dark">/mo</span>
                     </div>
-                     <ul class="space-y-4 text-gray-600 flex-grow text-left">
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Social Media Management (3 Platforms)</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> 15 Posts/Month & 4 Short Videos</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Community Management</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Detailed Analytics & Strategy Calls</li>
+                     <ul class="space-y-4 text-sp-dark flex-grow text-left">
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Social Media Management (3 Platforms)</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> 15 Posts/Month & 4 Short Videos</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Community Management</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Detailed Analytics & Strategy Calls</li>
                     </ul>
                 </div>
                 <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <h3 class="text-2xl font-semibold text-gray-800">Scale</h3>
-                    <p class="mt-2 text-gray-500">For Established Brands</p>
+                    <h3 class="text-2xl font-semibold text-sp-dark">Scale</h3>
+                    <p class="mt-2 text-sp-dark">For Established Brands</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-gray-900">₹60k+</span>
-                        <span class="text-lg font-medium text-gray-500">/mo</span>
+                        <span class="text-4xl font-bold text-sp-dark">₹60k+</span>
+                        <span class="text-lg font-medium text-sp-dark">/mo</span>
                     </div>
-                     <ul class="space-y-4 text-gray-600 flex-grow text-left">
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Comprehensive Digital Strategy</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> 25+ Posts & 8+ Videos/Month</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Paid Ad Management & Optimization</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-2">✔</span> Priority Support & Quarterly Planning</li>
+                     <ul class="space-y-4 text-sp-dark flex-grow text-left">
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Comprehensive Digital Strategy</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> 25+ Posts & 8+ Videos/Month</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Paid Ad Management & Optimization</li>
+                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Priority Support & Quarterly Planning</li>
                     </ul>
                 </div>
             </div>
@@ -190,8 +205,8 @@
     <section id="portfolio" class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Our Recent Work</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">A glimpse into how we've helped our clients achieve their digital goals with creative and strategic solutions.</p>
+                <h2 class="text-3xl font-bold text-sp-dark">Our Recent Work</h2>
+                <p class="mt-4 text-sp-dark max-w-2xl mx-auto">A glimpse into how we've helped our clients achieve their digital goals with creative and strategic solutions.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -223,39 +238,39 @@
     <section id="contact" class="bg-gray-100 py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Ready to Start?</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Tell us about your project, and we'll show you how we can help you build an impactful digital presence.</p>
+                <h2 class="text-3xl font-bold text-sp-dark">Ready to Start?</h2>
+                <p class="mt-4 text-sp-dark max-w-2xl mx-auto">Tell us about your project, and we'll show you how we can help you build an impactful digital presence.</p>
             </div>
             <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
                 <form id="contact-form" class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+                        <label for="name" class="block text-sm font-medium text-sp-dark">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue" required>
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+                        <label for="email" class="block text-sm font-medium text-sp-dark">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue" required>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-                            <select id="country" name="country" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500"></select>
+                            <label for="country" class="block text-sm font-medium text-sp-dark">Country</label>
+                            <select id="country" name="country" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue"></select>
                         </div>
                         <div>
-                            <label for="state" class="block text-sm font-medium text-gray-700">State / Region</label>
-                            <select id="state" name="state" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500"></select>
+                            <label for="state" class="block text-sm font-medium text-sp-dark">State / Region</label>
+                            <select id="state" name="state" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue"></select>
                         </div>
                     </div>
                     <div>
-                        <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile Number</label>
-                        <input type="tel" id="mobile" name="mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+                        <label for="mobile" class="block text-sm font-medium text-sp-dark">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue" required>
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700">Project Details</label>
-                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" required></textarea>
+                        <label for="message" class="block text-sm font-medium text-sp-dark">Project Details</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue" required></textarea>
                     </div>
                     <div class="text-center">
-                        <button type="submit" id="submit-btn" class="contact-btn w-full px-8 py-3 bg-teal-600 text-white font-semibold rounded-full shadow-lg hover:bg-teal-700">
+                        <button type="submit" id="submit-btn" class="contact-btn w-full px-8 py-3 bg-sp-blue text-white font-semibold rounded-full shadow-lg hover:bg-sp-purple">
                             Send Message
                         </button>
                     </div>
@@ -266,7 +281,7 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 mt-12 py-8">
-        <div class="container mx-auto px-4 sm:px-6 text-center text-sm text-gray-500">
+        <div class="container mx-auto px-4 sm:px-6 text-center text-sm text-sp-dark">
             <p>&copy; 2025 Social Pulse. All rights reserved.</p>
         </div>
     </footer>
@@ -274,9 +289,9 @@
     <!-- Modal for confirmation -->
     <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-lg p-8 shadow-2xl max-w-sm mx-auto text-center">
-            <h3 id="modal-title" class="text-2xl font-bold text-gray-800 mb-4">Message Sent!</h3>
-            <p id="modal-message" class="text-gray-600 mb-6">Thank you for reaching out. We will be in touch shortly to discuss your project.</p>
-            <button id="close-modal-btn" class="px-6 py-2 bg-teal-600 text-white font-semibold rounded-full hover:bg-teal-700 transition duration-300">
+            <h3 id="modal-title" class="text-2xl font-bold text-sp-dark mb-4">Message Sent!</h3>
+            <p id="modal-message" class="text-sp-dark mb-6">Thank you for reaching out. We will be in touch shortly to discuss your project.</p>
+            <button id="close-modal-btn" class="px-6 py-2 bg-sp-blue text-white font-semibold rounded-full hover:bg-sp-purple transition duration-300">
                 Close
             </button>
         </div>
