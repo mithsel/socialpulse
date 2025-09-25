@@ -315,6 +315,26 @@
                     return;
                 }
                 
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    modalTitle.textContent = 'Invalid Email';
+                    modalMessage.textContent = 'Please enter a valid email address.';
+                    modal.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    return;
+                }
+
+                const mobileRegex = /^\d{10}$/;
+                if (!mobileRegex.test(mobile)) {
+                    modalTitle.textContent = 'Invalid Mobile Number';
+                    modalMessage.textContent = 'Please enter a valid 10-digit mobile number.';
+                    modal.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    return;
+                }
+
                 const formData = {
                     data: {
                         Name: name,
@@ -360,4 +380,3 @@
     </script>
 </body>
 </html>
-
