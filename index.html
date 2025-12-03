@@ -19,7 +19,7 @@
         .bg-gradient-hero {
             background-image: linear-gradient(135deg, #f8f7f4 0%, #e7e5e4 100%);
         }
-        .service-card, .pricing-card {
+        .service-card, .pricing-card, .testimonial-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .service-card:hover, .pricing-card:hover {
@@ -34,6 +34,32 @@
         }
         .mobile-menu {
             transition: all 0.3s ease-in-out;
+        }
+        
+        /* Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ Accordion Styles */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .5s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
         }
     </style>
 </head>
@@ -50,33 +76,29 @@
                 <a href="#portfolio" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Portfolio</a>
             </div>
 
-            <!-- Center: Logo (Desktop) - Absolutely positioned -->
+            <!-- Center: Logo (Desktop) -->
             <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <a href="#">
                     <svg class="h-10 w-auto" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Icon -->
                         <path d="M20 4L4 36H36L20 4Z" fill="#2563eb"/>
                         <path d="M20 14L12 30H28L20 14Z" fill="#ffffff"/>
-                        <!-- Text -->
                         <text x="48" y="28" font-family="'Inter', sans-serif" font-weight="800" font-size="24" fill="#1f2937">Vision<tspan fill="#2563eb">Edge</tspan></text>
                     </svg>
                 </a>
             </div>
 
-            <!-- Mobile Logo (Center) -->
+            <!-- Mobile Logo -->
             <div class="flex-grow flex justify-center md:hidden">
                  <a href="#">
                     <svg class="h-10 w-auto" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Icon -->
                         <path d="M20 4L4 36H36L20 4Z" fill="#2563eb"/>
                         <path d="M20 14L12 30H28L20 14Z" fill="#ffffff"/>
-                        <!-- Text -->
                         <text x="48" y="28" font-family="'Inter', sans-serif" font-weight="800" font-size="24" fill="#1f2937">Vision<tspan fill="#2563eb">Edge</tspan></text>
                     </svg>
                 </a>
             </div>
 
-            <!-- Right: Contact + CTA (Desktop) -->
+            <!-- Right: Contact + CTA -->
             <div class="hidden md:flex items-center space-x-6">
                 <a href="tel:+919342499315" class="text-gray-600 font-medium hover:text-blue-600 transition duration-300 flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,182 +106,238 @@
                     </svg>
                     +91 9342499315
                 </a>
-                <a href="#contact" class="px-5 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300 text-sm font-semibold shadow-lg hover:shadow-blue-500/30">Get Started</a>
+                <button onclick="openCalendly()" class="px-5 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300 text-sm font-semibold shadow-lg hover:shadow-blue-500/30">
+                    Book Strategy Call
+                </button>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-blue-600 text-2xl focus:outline-none">&#9776;</button>
         </nav>
         
-        <!-- Mobile Dropdown -->
         <div id="mobile-menu" class="mobile-menu hidden w-full bg-white md:hidden shadow-md border-t border-gray-100">
             <a href="#services" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-50 transition duration-300 border-b border-gray-50">Services</a>
             <a href="#pricing" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-50 transition duration-300 border-b border-gray-50">Pricing</a>
             <a href="#portfolio" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-50 transition duration-300 border-b border-gray-50">Portfolio</a>
-            <a href="tel:+919342499315" class="block py-4 px-6 text-center text-blue-600 font-medium hover:bg-gray-50 transition duration-300 border-b border-gray-50">+91 9342499315</a>
-            <a href="#contact" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-50 transition duration-300 font-semibold">Get Started</a>
+            <button onclick="openCalendly()" class="block w-full py-4 px-6 text-center text-blue-600 font-bold hover:bg-gray-50 transition duration-300">Book Strategy Call</button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-hero py-16 md:py-24">
+    <section class="bg-gradient-hero py-16 md:py-24 reveal active">
         <div class="container mx-auto px-4 sm:px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Your Digital Story. <br class="hidden md:inline">Brilliantly Told.</h1>
             <p class="mt-6 md:text-xl text-gray-600 max-w-3xl mx-auto">We are a Chennai-based digital marketing partner, specializing in creating powerful online presences for individuals and brands through social media, modern web design, and captivating video content.</p>
-            <a href="#contact" class="mt-8 inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-transform hover:scale-105">
-                Elevate Your Brand
-            </a>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="openCalendly()" class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-transform hover:scale-105">
+                    Book Strategy Call
+                </button>
+                <a href="#contact" class="px-8 py-3 bg-white text-blue-600 border border-blue-200 font-semibold rounded-full shadow hover:bg-gray-50 transition-transform hover:scale-105">
+                    View Services
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24">
+    <section id="services" class="py-16 md:py-24 reveal">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900">Our Expertise</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We offer a full suite of services designed to build and grow your online presence, from foundational content creation to advanced strategic execution.</p>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We offer a full suite of services designed to build and grow your online presence.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards (Same as before) -->
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
                     <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">❖</div>
                     <h3 class="text-2xl font-semibold text-gray-800">Social Media Management</h3>
                     <ul class="mt-4 text-gray-600 text-left space-y-2">
-                        <li>&#10003; Page Management (YouTube, Meta, LinkedIn)</li>
-                        <li>&#10003; Content Creation & Scheduling</li>
-                        <li>&#10003; Community Engagement & Moderation</li>
-                        <li>&#10003; Platform-Specific Strategy (Reels, Shorts, Carousels)</li>
+                        <li>&#10003; Page Management</li>
+                        <li>&#10003; Content Creation</li>
+                        <li>&#10003; Community Engagement</li>
                     </ul>
                 </div>
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
                     <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">◎</div>
-                    <h3 class="text-2xl font-semibold text-gray-800">Web Design & Development</h3>
+                    <h3 class="text-2xl font-semibold text-gray-800">Web Design</h3>
                     <ul class="mt-4 text-gray-600 text-left space-y-2">
-                        <li>&#10003; AI-Assisted Single-Page Website Design</li>
-                        <li>&#10003; HTML-Based Dynamic Site Building</li>
-                        <li>&#10003; Responsive Mobile-First Design</li>
-                        <li>&#10003; Hosting & Domain Setup</li>
+                        <li>&#10003; AI-Assisted Design</li>
+                        <li>&#10003; Dynamic Site Building</li>
+                        <li>&#10003; Mobile-First Design</li>
                     </ul>
                 </div>
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
                     <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">▶</div>
-                    <h3 class="text-2xl font-semibold text-gray-800">Video & Content Production</h3>
+                    <h3 class="text-2xl font-semibold text-gray-800">Video Production</h3>
                     <ul class="mt-4 text-gray-600 text-left space-y-2">
-                        <li>&#10003; Long-Format Video Editing (YouTube)</li>
-                        <li>&#10003; Short-Form Video Editing (Reels, Shorts, TikTok)</li>
-                        <li>&#10003; Podcast & Audio Editing</li>
-                        <li>&#10003; Motion Graphics & Animations</li>
+                        <li>&#10003; YouTube Editing</li>
+                        <li>&#10003; Reels & Shorts</li>
+                        <li>&#10003; Motion Graphics</li>
                     </ul>
                 </div>
-                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">&#9733;</div>
-                    <h3 class="text-2xl font-semibold text-gray-800">Complementary Services</h3>
-                    <ul class="mt-4 text-gray-600 text-left space-y-2">
-                        <li>&#10003; Paid Advertising Management (Meta, Google)</li>
-                        <li>&#10003; Content Strategy & Planning</li>
-                        <li>&#10003; Professional Copywriting</li>
-                        <li>&#10003; Graphic Design (Logos, Banners, Ads)</li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 3: Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-blue-600 reveal">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Client Success Stories</h2>
+                <p class="mt-4 text-blue-100 max-w-2xl mx-auto">Don't just take our word for it.</p>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide active bg-white p-8 md:p-10 rounded-2xl shadow-xl text-center">
+                    <div class="text-blue-500 text-4xl mb-4">❝</div>
+                    <p class="text-gray-700 text-lg md:text-xl italic mb-6">"VisionEdge completely transformed our online presence. Our lead volume has doubled since they took over our social media."</p>
+                    <div class="flex items-center justify-center space-x-4">
+                        <img src="https://placehold.co/50x50/2563eb/ffffff?text=SJ" class="rounded-full w-12 h-12" alt="Client">
+                        <div class="text-left">
+                            <div class="font-bold text-gray-900">Sarah Jenkins</div>
+                            <div class="text-sm text-gray-500">Founder, TechStart</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="bg-gray-100 py-16 md:py-24">
+    <section id="pricing" class="bg-gray-100 py-16 md:py-24 reveal">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Simple & Transparent Pricing</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Our tiered packages are designed to match your growth stage, from individual creators to established brands. Choose the plan that best fits your needs.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Simple Pricing</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Plans that grow with you.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter -->
                 <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
                     <h3 class="text-2xl font-semibold text-gray-800">Starter</h3>
-                    <p class="mt-2 text-gray-500">For Individuals & Solopreneurs</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-gray-900">₹8k</span>
-                        <span class="text-lg font-medium text-gray-500">/mo</span>
+                        <span class="text-4xl font-bold text-gray-900">₹8k</span><span class="text-gray-500">/mo</span>
                     </div>
-                    <ul class="space-y-4 text-gray-600 flex-grow text-left">
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Social Media Management (2 Platforms)</li>
+                    <ul class="space-y-4 text-gray-600 text-left mb-8">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 2 Platforms</li>
                         <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 8 Posts/Month</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Basic Content Creation</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Monthly Analytics Report</li>
                     </ul>
+                    <a href="#contact" class="mt-auto block w-full py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition">Choose Plan</a>
                 </div>
+                <!-- Growth -->
                 <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center ring-2 ring-blue-500 relative">
                      <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                        <span class="inline-flex items-center rounded-full bg-blue-500 px-4 py-1 text-sm font-medium text-white">Most Popular</span>
+                        <span class="inline-flex items-center rounded-full bg-blue-500 px-4 py-1 text-sm font-medium text-white">Popular</span>
                     </div>
                     <h3 class="text-2xl font-semibold text-gray-800">Growth</h3>
-                    <p class="mt-2 text-gray-500">For SMEs & Startups</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-gray-900">₹25k</span>
-                        <span class="text-lg font-medium text-gray-500">/mo</span>
+                        <span class="text-4xl font-bold text-gray-900">₹25k</span><span class="text-gray-500">/mo</span>
                     </div>
-                     <ul class="space-y-4 text-gray-600 flex-grow text-left">
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Social Media Management (3 Platforms)</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 15 Posts/Month & 4 Short Videos</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Community Management</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Detailed Analytics & Strategy Calls</li>
+                     <ul class="space-y-4 text-gray-600 text-left mb-8">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 3 Platforms</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 15 Posts + 4 Videos</li>
                     </ul>
+                    <a href="#contact" class="mt-auto block w-full py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition">Choose Plan</a>
                 </div>
+                <!-- Scale -->
                 <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
                     <h3 class="text-2xl font-semibold text-gray-800">Scale</h3>
-                    <p class="mt-2 text-gray-500">For Established Brands</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-gray-900">₹60k+</span>
-                        <span class="text-lg font-medium text-gray-500">/mo</span>
+                        <span class="text-4xl font-bold text-gray-900">₹60k+</span><span class="text-gray-500">/mo</span>
                     </div>
-                     <ul class="space-y-4 text-gray-600 flex-grow text-left">
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Comprehensive Digital Strategy</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 25+ Posts & 8+ Videos/Month</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Paid Ad Management & Optimization</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Priority Support & Quarterly Planning</li>
+                     <ul class="space-y-4 text-gray-600 text-left mb-8">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Full Strategy</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 25+ Posts + Ads</li>
                     </ul>
+                    <a href="#contact" class="mt-auto block w-full py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition">Choose Plan</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 md:py-24">
+    <section id="portfolio" class="py-16 md:py-24 reveal">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900">Our Recent Work</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">A glimpse into how we've helped our clients achieve their digital goals with creative and strategic solutions.</p>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Creative solutions that deliver results.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Using Placeholders for Broken Images -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="eg1.jpg" alt="Social Media Strategy for Startup" class="h-64 w-full object-cover">
+                    <img src="https://placehold.co/600x400/2563eb/ffffff?text=Brand+Strategy" alt="Social Media Strategy" class="h-64 w-full object-cover">
                     <div class="absolute inset-0 bg-gray-900 bg-opacity-75 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-white">Brand Launch</h3>
-                        <p class="mt-1 text-sm text-gray-300">A comprehensive social media strategy for a new Drone startup.</p>
+                        <p class="mt-1 text-sm text-gray-300">Social media strategy for a Drone startup.</p>
                     </div>
                 </div>
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="crm inhouse.png" alt="E-commerce Web App Design" class="h-64 w-full object-cover">
+                    <img src="https://placehold.co/600x400/1e40af/ffffff?text=CRM+Dashboard" alt="Web App Design" class="h-64 w-full object-cover">
                     <div class="absolute inset-0 bg-gray-900 bg-opacity-75 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-white">Web App</h3>
-                        <p class="mt-1 text-sm text-gray-300">Designed and developed a dynamic single-page HTML CRM platform for an in-house lead management system.</p>
+                        <p class="mt-1 text-sm text-gray-300">HTML CRM platform for lead management.</p>
                     </div>
                 </div>
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="vid.png" alt="Video Series Production" class="h-64 w-full object-cover">
+                    <img src="https://placehold.co/600x400/1d4ed8/ffffff?text=Video+Production" alt="Video Production" class="h-64 w-full object-cover">
                     <div class="absolute inset-0 bg-gray-900 bg-opacity-75 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <h3 class="text-xl font-semibold text-white">Brand Videos</h3>
-                        <p class="mt-1 text-sm text-gray-300">Created and edited a series of short-format videos for a RPTO Client.</p>
+                        <p class="mt-1 text-sm text-gray-300">Short-format video series for RPTO.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Feature 4: FAQ Section -->
+    <section id="faq" class="py-16 bg-white reveal">
+        <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-gray-800">
+                        <span>Do you require long-term contracts?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                        No, we offer flexible month-to-month retainers. However, we recommend at least 3 months to see significant results from organic social growth.
+                    </p>
+                </details>
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-gray-800">
+                        <span>How quickly can we get started?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                        Once we have our discovery call, we can usually start the onboarding process within 48 hours and have your first content calendar ready within a week.
+                    </p>
+                </details>
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-gray-800">
+                        <span>Do you handle ad budgets?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                        Yes, our 'Scale' package includes ad management. The ad spend budget is paid directly by you to the platforms (Meta/Google), giving you full transparency.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="bg-gray-100 py-16 md:py-24">
+    <section id="contact" class="bg-gray-100 py-16 md:py-24 reveal">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Ready to Start?</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Tell us about your project, and we'll show you how we can help you build an impactful digital presence.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Get in Touch</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Ready to elevate your brand? Send us a message.</p>
             </div>
             <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
                 <form id="contact-form" class="space-y-6">
@@ -296,7 +374,30 @@
         </div>
     </footer>
 
-    <!-- Modal for confirmation -->
+    <!-- Feature 5: Calendly Modal -->
+    <div id="calendly-modal" class="fixed inset-0 bg-gray-900 bg-opacity-90 hidden z-[60] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl w-full max-w-4xl h-[80vh] flex flex-col relative overflow-hidden">
+            <div class="p-4 bg-gray-50 border-b flex justify-between items-center">
+                <h3 class="font-bold text-gray-800">Schedule Your Strategy Call</h3>
+                <button onclick="closeCalendly()" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="flex-grow bg-white flex items-center justify-center">
+                <!-- Placeholder for Calendly Iframe -->
+                <div class="text-center p-8">
+                    <div class="animate-pulse mb-4">
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-2"></div>
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
+                    </div>
+                    <p class="text-gray-500 mb-4">Calendly Widget Loading...</p>
+                    <p class="text-xs text-gray-400">(This is a demo. In production, embed your Calendly URL here)</p>
+                    <!-- Actual iframe code would go here: -->
+                    <!-- <iframe src="https://calendly.com/YOUR_LINK" width="100%" height="100%" frameborder="0"></iframe> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Success Modal -->
     <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-lg p-8 shadow-2xl max-w-sm mx-auto text-center">
             <h3 id="modal-title" class="text-2xl font-bold text-gray-800 mb-4">Message Sent!</h3>
@@ -312,11 +413,36 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
         </svg>
-        <span class="absolute right-full mr-3 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Chat with us</span>
     </a>
 
     <script>
+        // Modal Logic for Calendly
+        function openCalendly() {
+            document.getElementById('calendly-modal').classList.remove('hidden');
+        }
+        function closeCalendly() {
+            document.getElementById('calendly-modal').classList.add('hidden');
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Feature 2: Scroll Animations ---
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+                
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger once on load
+
+            // --- Existing Form & Modal Logic ---
             const form = document.getElementById('contact-form');
             const submitBtn = document.getElementById('submit-btn');
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -325,7 +451,7 @@
             const modalTitle = document.getElementById('modal-title');
             const modalMessage = document.getElementById('modal-message');
             const closeModalBtn = document.getElementById('close-modal-btn');
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a, button'); // Updated selector
             
             const SHEETDB_URL = 'https://sheetdb.io/api/v1/YOUR_SHEETDB_ID';
 
@@ -339,68 +465,69 @@
                 });
             });
 
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
+            if(form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
 
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const mobile = document.getElementById('mobile').value;
-                const message = document.getElementById('message').value;
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const mobile = document.getElementById('mobile').value;
+                    const message = document.getElementById('message').value;
 
-                if (!name || !email || !mobile || !message) {
-                    modalTitle.textContent = 'Submission Failed';
-                    modalMessage.textContent = 'Please fill out all fields before submitting.';
-                    modal.classList.remove('hidden');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                    return;
-                }
-                
-                const formData = {
-                    data: {
-                        Name: name,
-                        Email: email,
-                        "Mobile Number": mobile,
-                        "Project Details": message
+                    if (!name || !email || !mobile || !message) {
+                        modalTitle.textContent = 'Submission Failed';
+                        modalMessage.textContent = 'Please fill out all fields before submitting.';
+                        modal.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                        return;
                     }
-                };
+                    
+                    const formData = {
+                        data: {
+                            Name: name,
+                            Email: email,
+                            "Mobile Number": mobile,
+                            "Project Details": message
+                        }
+                    };
 
-                try {
-                    const response = await fetch(SHEETDB_URL, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(formData)
-                    });
+                    try {
+                        const response = await fetch(SHEETDB_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(formData)
+                        });
 
-                    const result = await response.json();
+                        const result = await response.json();
 
-                    if (response.ok) {
-                        modalTitle.textContent = 'Message Sent!';
-                        modalMessage.textContent = 'Thank you for reaching out. We will be in touch shortly to discuss your project.';
-                        form.reset();
-                    } else {
-                        throw new Error(result.message || 'Unknown error');
+                        if (response.ok) {
+                            modalTitle.textContent = 'Message Sent!';
+                            modalMessage.textContent = 'Thank you for reaching out. We will be in touch shortly to discuss your project.';
+                            form.reset();
+                        } else {
+                            throw new Error(result.message || 'Unknown error');
+                        }
+                    } catch (error) {
+                        modalTitle.textContent = 'Submission Failed';
+                        modalMessage.textContent = 'An error occurred. Please try again later.';
+                        console.error('Error submitting form:', error);
+                    } finally {
+                        modal.classList.remove('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
                     }
-                } catch (error) {
-                    modalTitle.textContent = 'Submission Failed';
-                    modalMessage.textContent = 'An error occurred. Please try again later.';
-                    console.error('Error submitting form:', error);
-                } finally {
-                    modal.classList.remove('hidden');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                }
-            });
+                });
+            }
             
-            closeModalBtn.addEventListener('click', () => {
-                modal.classList.add('hidden');
-            });
+            if(closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                });
+            }
         });
     </script>
 </body>
 </html>
-
