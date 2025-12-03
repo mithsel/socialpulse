@@ -1,38 +1,23 @@
-<!DOCTYPE a html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Pulse</title>
+    <title>VisionEdge</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'sp-blue': '#1673b2',
-                        'sp-purple': '#632599',
-                        'sp-pink': '#d65389',
-                        'sp-orange': '#ed814a',
-                        'sp-dark': '#1e293b',
-                        'sp-light-bg': '#f8fafc',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: #f8f7f4;
+            color: #3f3c3a;
         }
         .container {
             max-width: 1400px;
         }
         .bg-gradient-hero {
-            background-image: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 100%);
+            background-image: linear-gradient(135deg, #f8f7f4 0%, #e7e5e4 100%);
         }
         .service-card, .pricing-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -50,49 +35,55 @@
         .mobile-menu {
             transition: all 0.3s ease-in-out;
         }
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
     <header class="shadow-hero sticky top-0 z-50 bg-white/80 backdrop-blur-sm">
-        <nav class="container mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <a href="#" class="hidden sm:block">
-                <img src="visionedge-logo.png" alt="Social Pulse Logo" class="w-56 h-auto">
+                <svg class="h-10 w-auto" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Icon -->
+                    <path d="M20 4L4 36H36L20 4Z" fill="#2563eb"/>
+                    <path d="M20 14L12 30H28L20 14Z" fill="#ffffff"/>
+                    <!-- Text -->
+                    <text x="48" y="28" font-family="'Inter', sans-serif" font-weight="800" font-size="24" fill="#1f2937">Vision<tspan fill="#2563eb">Edge</tspan></text>
+                </svg>
             </a>
             <div class="flex-grow flex justify-center sm:hidden">
                  <a href="#">
-                    <img src="social-pulse-logo.png" alt="Social Pulse Logo" class="w-48 h-auto">
+                    <svg class="h-10 w-auto" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Icon -->
+                        <path d="M20 4L4 36H36L20 4Z" fill="#2563eb"/>
+                        <path d="M20 14L12 30H28L20 14Z" fill="#ffffff"/>
+                        <!-- Text -->
+                        <text x="48" y="28" font-family="'Inter', sans-serif" font-weight="800" font-size="24" fill="#1f2937">Vision<tspan fill="#2563eb">Edge</tspan></text>
+                    </svg>
                 </a>
             </div>
             <div class="flex items-center space-x-6 hidden sm:flex">
-                <a href="#services" class="text-sp-dark hover:text-sp-blue transition duration-300">Services</a>
-                <a href="#pricing" class="text-sp-dark hover:text-sp-blue transition duration-300">Pricing</a>
-                <a href="#portfolio" class="text-sp-dark hover:text-sp-blue transition duration-300">Portfolio</a>
-                <a href="#contact" class="px-4 py-2 bg-sp-blue text-white rounded-full hover:bg-sp-purple transition duration-300 text-sm font-semibold">Get Started</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-600 transition duration-300">Pricing</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-blue-600 transition duration-300">Portfolio</a>
+                <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300 text-sm font-semibold">Get Started</a>
             </div>
-            <button id="mobile-menu-btn" class="sm:hidden text-sp-dark hover:text-sp-blue text-2xl focus:outline-none">&#9776;</button>
+            <button id="mobile-menu-btn" class="sm:hidden text-gray-600 hover:text-blue-600 text-2xl focus:outline-none">&#9776;</button>
         </nav>
         <div id="mobile-menu" class="mobile-menu hidden w-full bg-white sm:hidden shadow-md">
-            <a href="#services" class="block py-4 px-6 text-center text-sp-dark hover:bg-gray-100 transition duration-300">Services</a>
-            <a href="#pricing" class="block py-4 px-6 text-center text-sp-dark hover:bg-gray-100 transition duration-300">Pricing</a>
-            <a href="#portfolio" class="block py-4 px-6 text-center text-sp-dark hover:bg-gray-100 transition duration-300">Portfolio</a>
-            <a href="#contact" class="block py-4 px-6 text-center text-sp-dark hover:bg-gray-100 transition duration-300">Get Started</a>
+            <a href="#services" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-100 transition duration-300">Services</a>
+            <a href="#pricing" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-100 transition duration-300">Pricing</a>
+            <a href="#portfolio" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-100 transition duration-300">Portfolio</a>
+            <a href="#contact" class="block py-4 px-6 text-center text-gray-700 hover:bg-gray-100 transition duration-300">Get Started</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="bg-gradient-hero py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-sp-dark leading-tight">Your Digital Story. <br class="hidden md:inline">Brilliantly Told.</h1>
-            <p class="mt-6 md:text-xl text-sp-dark max-w-3xl mx-auto">We are a Chennai-based digital marketing Agency, specializing in creating powerful online presences for individuals and brands through social media, modern web design, and captivating video content.</p>
-            <a href="#contact" class="mt-8 inline-block px-8 py-3 bg-sp-blue text-white font-semibold rounded-full shadow-lg hover:bg-sp-purple transition-transform hover:scale-105">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Your Digital Story. <br class="hidden md:inline">Brilliantly Told.</h1>
+            <p class="mt-6 md:text-xl text-gray-600 max-w-3xl mx-auto">We are a Chennai-based digital marketing partner, specializing in creating powerful online presences for individuals and brands through social media, modern web design, and captivating video content.</p>
+            <a href="#contact" class="mt-8 inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-transform hover:scale-105">
                 Elevate Your Brand
             </a>
         </div>
@@ -102,14 +93,14 @@
     <section id="services" class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-sp-dark">Our Expertise</h2>
-                <p class="mt-4 text-sp-dark max-w-2xl mx-auto">We offer a full suite of services designed to build and grow your online presence, from foundational content creation to advanced strategic execution.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Our Expertise</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We offer a full suite of services designed to build and grow your online presence, from foundational content creation to advanced strategic execution.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-gray-200 text-sp-blue rounded-full mb-4 text-4xl mx-auto">❖</div>
-                    <h3 class="text-2xl font-semibold text-sp-dark">Social Media Management</h3>
-                    <ul class="mt-4 text-sp-dark text-left space-y-2">
+                    <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">❖</div>
+                    <h3 class="text-2xl font-semibold text-gray-800">Social Media Management</h3>
+                    <ul class="mt-4 text-gray-600 text-left space-y-2">
                         <li>&#10003; Page Management (YouTube, Meta, LinkedIn)</li>
                         <li>&#10003; Content Creation & Scheduling</li>
                         <li>&#10003; Community Engagement & Moderation</li>
@@ -117,9 +108,9 @@
                     </ul>
                 </div>
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-gray-200 text-sp-blue rounded-full mb-4 text-4xl mx-auto">◎</div>
-                    <h3 class="text-2xl font-semibold text-sp-dark">Web Design & Development</h3>
-                    <ul class="mt-4 text-sp-dark text-left space-y-2">
+                    <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">◎</div>
+                    <h3 class="text-2xl font-semibold text-gray-800">Web Design & Development</h3>
+                    <ul class="mt-4 text-gray-600 text-left space-y-2">
                         <li>&#10003; AI-Assisted Single-Page Website Design</li>
                         <li>&#10003; HTML-Based Dynamic Site Building</li>
                         <li>&#10003; Responsive Mobile-First Design</li>
@@ -127,9 +118,9 @@
                     </ul>
                 </div>
                 <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-gray-200 text-sp-blue rounded-full mb-4 text-4xl mx-auto">▶</div>
-                    <h3 class="text-2xl font-semibold text-sp-dark">Video & Content Production</h3>
-                    <ul class="mt-4 text-sp-dark text-left space-y-2">
+                    <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">▶</div>
+                    <h3 class="text-2xl font-semibold text-gray-800">Video & Content Production</h3>
+                    <ul class="mt-4 text-gray-600 text-left space-y-2">
                         <li>&#10003; Long-Format Video Editing (YouTube)</li>
                         <li>&#10003; Short-Form Video Editing (Reels, Shorts, TikTok)</li>
                         <li>&#10003; Podcast & Audio Editing</li>
@@ -137,9 +128,9 @@
                     </ul>
                 </div>
                  <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <div class="p-4 bg-gray-200 text-sp-blue rounded-full mb-4 text-4xl mx-auto">&#9733;</div>
-                    <h3 class="text-2xl font-semibold text-sp-dark">Complementary Services</h3>
-                    <ul class="mt-4 text-sp-dark text-left space-y-2">
+                    <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">&#9733;</div>
+                    <h3 class="text-2xl font-semibold text-gray-800">Complementary Services</h3>
+                    <ul class="mt-4 text-gray-600 text-left space-y-2">
                         <li>&#10003; Paid Advertising Management (Meta, Google)</li>
                         <li>&#10003; Content Strategy & Planning</li>
                         <li>&#10003; Professional Copywriting</li>
@@ -154,53 +145,53 @@
     <section id="pricing" class="bg-gray-100 py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-sp-dark">Simple & Transparent Pricing</h2>
-                <p class="mt-4 text-sp-dark max-w-2xl mx-auto">Our tiered packages are designed to match your growth stage, from individual creators to established brands. Choose the plan that best fits your needs.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Simple & Transparent Pricing</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Our tiered packages are designed to match your growth stage, from individual creators to established brands. Choose the plan that best fits your needs.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <h3 class="text-2xl font-semibold text-sp-dark">Starter</h3>
-                    <p class="mt-2 text-sp-dark">For Individuals & Solopreneurs</p>
+                    <h3 class="text-2xl font-semibold text-gray-800">Starter</h3>
+                    <p class="mt-2 text-gray-500">For Individuals & Solopreneurs</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-sp-dark">₹5k</span>
-                        <span class="text-lg font-medium text-sp-dark">/mo</span>
+                        <span class="text-4xl font-bold text-gray-900">₹8k</span>
+                        <span class="text-lg font-medium text-gray-500">/mo</span>
                     </div>
-                    <ul class="space-y-4 text-sp-dark flex-grow text-left">
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Social Media Management (2 Platforms)</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> 8 Posts/Month</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Basic Content Creation</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Monthly Analytics Report</li>
+                    <ul class="space-y-4 text-gray-600 flex-grow text-left">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Social Media Management (2 Platforms)</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 8 Posts/Month</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Basic Content Creation</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Monthly Analytics Report</li>
                     </ul>
                 </div>
-                <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center ring-2 ring-sp-blue relative">
+                <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center ring-2 ring-blue-500 relative">
                      <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                        <span class="inline-flex items-center rounded-full bg-sp-blue px-4 py-1 text-sm font-medium text-white">Most Popular</span>
+                        <span class="inline-flex items-center rounded-full bg-blue-500 px-4 py-1 text-sm font-medium text-white">Most Popular</span>
                     </div>
-                    <h3 class="text-2xl font-semibold text-sp-dark">Growth</h3>
-                    <p class="mt-2 text-sp-dark">For SMEs & Startups</p>
+                    <h3 class="text-2xl font-semibold text-gray-800">Growth</h3>
+                    <p class="mt-2 text-gray-500">For SMEs & Startups</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-sp-dark">₹10k</span>
-                        <span class="text-lg font-medium text-sp-dark">/mo</span>
+                        <span class="text-4xl font-bold text-gray-900">₹25k</span>
+                        <span class="text-lg font-medium text-gray-500">/mo</span>
                     </div>
-                     <ul class="space-y-4 text-sp-dark flex-grow text-left">
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Social Media Management (3 Platforms)</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> 15 Posts/Month & 4 Short Videos</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Community Management</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Detailed Analytics & Strategy Calls</li>
+                     <ul class="space-y-4 text-gray-600 flex-grow text-left">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Social Media Management (3 Platforms)</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 15 Posts/Month & 4 Short Videos</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Community Management</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Detailed Analytics & Strategy Calls</li>
                     </ul>
                 </div>
                 <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                    <h3 class="text-2xl font-semibold text-sp-dark">Scale</h3>
-                    <p class="mt-2 text-sp-dark">For Established Brands</p>
+                    <h3 class="text-2xl font-semibold text-gray-800">Scale</h3>
+                    <p class="mt-2 text-gray-500">For Established Brands</p>
                     <div class="mt-6 mb-6">
-                        <span class="text-4xl font-bold text-sp-dark">₹20k</span>
-                        <span class="text-lg font-medium text-sp-dark">/mo</span>
+                        <span class="text-4xl font-bold text-gray-900">₹60k+</span>
+                        <span class="text-lg font-medium text-gray-500">/mo</span>
                     </div>
-                     <ul class="space-y-4 text-sp-dark flex-grow text-left">
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Comprehensive Digital Strategy</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> 25+ Posts & 8+ Videos/Month</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Paid Ad Management & Optimization</li>
-                        <li class="flex items-center"><span class="text-sp-blue mr-2">✔</span> Priority Support & Quarterly Planning</li>
+                     <ul class="space-y-4 text-gray-600 flex-grow text-left">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Comprehensive Digital Strategy</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 25+ Posts & 8+ Videos/Month</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Paid Ad Management & Optimization</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Priority Support & Quarterly Planning</li>
                     </ul>
                 </div>
             </div>
@@ -211,8 +202,8 @@
     <section id="portfolio" class="py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-sp-dark">Our Recent Work</h2>
-                <p class="mt-4 text-sp-dark max-w-2xl mx-auto">A glimpse into how we've helped our clients achieve their digital goals with creative and strategic solutions.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Our Recent Work</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">A glimpse into how we've helped our clients achieve their digital goals with creative and strategic solutions.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -244,39 +235,29 @@
     <section id="contact" class="bg-gray-100 py-16 md:py-24">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-sp-dark">Ready to Start?</h2>
-                <p class="mt-4 text-sp-dark max-w-2xl mx-auto">Tell us about your project, and we'll show you how we can help you build an impactful digital presence.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Ready to Start?</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Tell us about your project, and we'll show you how we can help you build an impactful digital presence.</p>
             </div>
             <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
                 <form id="contact-form" class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-sp-dark">Name</label>
-                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue" required>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-sp-dark">Email</label>
-                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue" required>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label for="country" class="block text-sm font-medium text-sp-dark">Country</label>
-                            <select id="country" name="country" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue"></select>
-                        </div>
-                        <div>
-                            <label for="state" class="block text-sm font-medium text-sp-dark">State / Region</label>
-                            <select id="state" name="state" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue"></select>
-                        </div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
                     </div>
                     <div>
-                        <label for="mobile" class="block text-sm font-medium text-sp-dark">Mobile Number</label>
-                        <input type="tel" id="mobile" name="mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue" required>
+                        <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-sp-dark">Project Details</label>
-                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sp-blue focus:ring-sp-blue" required></textarea>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Project Details</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required></textarea>
                     </div>
                     <div class="text-center">
-                        <button type="submit" id="submit-btn" class="contact-btn w-full px-8 py-3 bg-sp-blue text-white font-semibold rounded-full shadow-lg hover:bg-sp-purple">
+                        <button type="submit" id="submit-btn" class="contact-btn w-full px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
                             Send Message
                         </button>
                     </div>
@@ -287,21 +268,29 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 mt-12 py-8">
-        <div class="container mx-auto px-4 sm:px-6 text-center text-sm text-sp-dark">
-            <p>&copy; 2025 Social Pulse. All rights reserved.</p>
+        <div class="container mx-auto px-4 sm:px-6 text-center text-sm text-gray-500">
+            <p>&copy; 2025 VisionEdge. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Modal for confirmation -->
     <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-lg p-8 shadow-2xl max-w-sm mx-auto text-center">
-            <h3 id="modal-title" class="text-2xl font-bold text-sp-dark mb-4">Message Sent!</h3>
-            <p id="modal-message" class="text-sp-dark mb-6">Thank you for reaching out. We will be in touch shortly to discuss your project.</p>
-            <button id="close-modal-btn" class="px-6 py-2 bg-sp-blue text-white font-semibold rounded-full hover:bg-sp-purple transition duration-300">
+            <h3 id="modal-title" class="text-2xl font-bold text-gray-800 mb-4">Message Sent!</h3>
+            <p id="modal-message" class="text-gray-600 mb-6">Thank you for reaching out. We will be in touch shortly to discuss your project.</p>
+            <button id="close-modal-btn" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300">
                 Close
             </button>
         </div>
     </div>
+
+    <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 flex items-center justify-center group shadow-green-500/30" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="absolute right-full mr-3 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Chat with us</span>
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -314,52 +303,8 @@
             const modalMessage = document.getElementById('modal-message');
             const closeModalBtn = document.getElementById('close-modal-btn');
             const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-            const countrySelect = document.getElementById('country');
-            const stateSelect = document.getElementById('state');
             
-            const SHEETDB_URL = 'https://sheetdb.io/api/v1/67mfbglztth0l';
-
-            const COUNTRIES_DATA = {
-                "India": ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"],
-                "United States": ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"],
-                "United Kingdom": ["England", "Scotland", "Wales", "Northern Ireland"],
-                "Canada": ["Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Nova Scotia", "Ontario", "Prince Edward Island", "Quebec", "Saskatchewan"],
-                "Australia": ["Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
-                "Germany": ["Baden-Württemberg", "Bavaria", "Berlin", "Brandenburg", "Bremen", "Hamburg", "Hesse", "Mecklenburg-Vorpommern", "Lower Saxony", "North Rhine-Westphalia", "Rhineland-Palatinate", "Saarland", "Saxony", "Saxony-Anhalt", "Schleswig-Holstein", "Thuringia"],
-                "France": ["Auvergne-Rhône-Alpes", "Bourgogne-Franche-Comté", "Brittany", "Centre-Val de Loire", "Corsica", "Grand Est", "Hauts-de-France", "Île-de-France", "Normandy", "Nouvelle-Aquitaine", "Occitanie", "Pays de la Loire", "Provence-Alpes-Côte d'Azur"],
-                "Japan": ["Hokkaido", "Tohoku", "Kanto", "Chubu", "Kansai", "Chugoku", "Shikoku", "Kyushu"],
-                "Brazil": ["Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"],
-                "Other": ["N/A"]
-            };
-
-            const populateCountries = () => {
-                countrySelect.innerHTML = '<option value="">Select Country</option>';
-                for (const country in COUNTRIES_DATA) {
-                    const option = document.createElement('option');
-                    option.value = country;
-                    option.textContent = country;
-                    countrySelect.appendChild(option);
-                }
-            };
-
-            const populateStates = (country) => {
-                stateSelect.innerHTML = '<option value="">Select State / Region</option>';
-                if (COUNTRIES_DATA[country]) {
-                    COUNTRIES_DATA[country].forEach(state => {
-                        const option = document.createElement('option');
-                        option.value = state;
-                        option.textContent = state;
-                        stateSelect.appendChild(option);
-                    });
-                }
-            };
-
-            populateCountries();
-
-            countrySelect.addEventListener('change', (e) => {
-                const selectedCountry = e.target.value;
-                populateStates(selectedCountry);
-            });
+            const SHEETDB_URL = 'https://sheetdb.io/api/v1/YOUR_SHEETDB_ID';
 
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
@@ -378,12 +323,10 @@
 
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
-                const country = document.getElementById('country').value;
-                const state = document.getElementById('state').value;
                 const mobile = document.getElementById('mobile').value;
                 const message = document.getElementById('message').value;
 
-                if (!name || !email || !country || !state || !mobile || !message) {
+                if (!name || !email || !mobile || !message) {
                     modalTitle.textContent = 'Submission Failed';
                     modalMessage.textContent = 'Please fill out all fields before submitting.';
                     modal.classList.remove('hidden');
@@ -392,33 +335,10 @@
                     return;
                 }
                 
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    modalTitle.textContent = 'Invalid Email';
-                    modalMessage.textContent = 'Please enter a valid email address.';
-                    modal.classList.remove('hidden');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                    return;
-                }
-
-                // Simplified mobile number validation to allow for international formats
-                if (mobile.length < 5 || mobile.length > 15) {
-                    modalTitle.textContent = 'Invalid Mobile Number';
-                    modalMessage.textContent = 'Please enter a valid mobile number.';
-                    modal.classList.remove('hidden');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                    return;
-                }
-
-
                 const formData = {
                     data: {
                         Name: name,
                         Email: email,
-                        Country: country,
-                        State: state,
                         "Mobile Number": mobile,
                         "Project Details": message
                     }
@@ -439,7 +359,6 @@
                         modalTitle.textContent = 'Message Sent!';
                         modalMessage.textContent = 'Thank you for reaching out. We will be in touch shortly to discuss your project.';
                         form.reset();
-                        populateStates("");
                     } else {
                         throw new Error(result.message || 'Unknown error');
                     }
@@ -461,6 +380,3 @@
     </script>
 </body>
 </html>
-
-
-
