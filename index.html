@@ -677,7 +677,8 @@
                             Email: email, 
                             Mobile: mobile, 
                             Message: message,
-                            _template: "table" // Formats email as a table
+                            _template: "table", // Formats email as a table
+                            _captcha: "false" // Disable captcha for easier testing/activation
                         },
                         submitBtn, 'Send Message', form
                     );
@@ -704,7 +705,8 @@
                             Service_Interest: service, 
                             Preferred_Time: time, 
                             Type: "Callback Request",
-                            _template: "table"
+                            _template: "table",
+                            _captcha: "false" // Disable captcha for easier testing/activation
                         },
                         bookingSubmitBtn, 'Request Callback', bookingForm, true
                     );
