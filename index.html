@@ -154,250 +154,271 @@
         </div>
     </header>
 
-    <!-- Main Landing Page View -->
-    <main>
-        <!-- Hero Section -->
-        <section class="bg-gradient-hero py-16 md:py-24 reveal active">
-            <div class="container mx-auto px-4 sm:px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Your Digital Story. <br class="hidden md:inline">Brilliantly Told.</h1>
-                <p class="mt-6 md:text-xl text-gray-600 max-w-3xl mx-auto">We are a Chennai-based digital marketing partner, specializing in creating powerful online presences for individuals and brands through social media, modern web design, and captivating video content.</p>
-                <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-                    <button onclick="openBooking()" class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-transform hover:scale-105">
-                        Request Callback
-                    </button>
-                    <a href="#contact" class="px-8 py-3 bg-white text-blue-600 border border-blue-200 font-semibold rounded-full shadow hover:bg-gray-50 transition-transform hover:scale-105">
-                        View Services
-                    </a>
+    <!-- Hero Section -->
+    <section class="bg-gradient-hero py-16 md:py-24 reveal active">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Your Digital Story. <br class="hidden md:inline">Brilliantly Told.</h1>
+            <p class="mt-6 md:text-xl text-gray-600 max-w-3xl mx-auto">We are a Chennai-based digital marketing partner, specializing in creating powerful online presences for individuals and brands through social media, modern web design, and captivating video content.</p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="openBooking()" class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-transform hover:scale-105">
+                    Request Callback
+                </button>
+                <a href="#services" class="px-8 py-3 bg-white text-blue-600 border border-blue-200 font-semibold rounded-full shadow hover:bg-gray-50 transition-transform hover:scale-105">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 reveal">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Our Expertise</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We offer a full suite of services designed to build and grow your online presence.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
+                    <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">❖</div>
+                    <h3 class="text-2xl font-semibold text-gray-800">Social Media Management</h3>
+                    <ul class="mt-4 text-gray-600 text-left space-y-2">
+                        <li>&#10003; Page Management</li>
+                        <li>&#10003; Content Creation</li>
+                        <li>&#10003; Community Engagement</li>
+                    </ul>
+                </div>
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
+                    <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">◎</div>
+                    <h3 class="text-2xl font-semibold text-gray-800">Web Design</h3>
+                    <ul class="mt-4 text-gray-600 text-left space-y-2">
+                        <li>&#10003; AI-Assisted Design</li>
+                        <li>&#10003; Dynamic Site Building</li>
+                        <li>&#10003; Mobile-First Design</li>
+                    </ul>
+                </div>
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
+                    <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">▶</div>
+                    <h3 class="text-2xl font-semibold text-gray-800">Video Production</h3>
+                    <ul class="mt-4 text-gray-600 text-left space-y-2">
+                        <li>&#10003; YouTube Editing</li>
+                        <li>&#10003; Reels & Shorts</li>
+                        <li>&#10003; Motion Graphics</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services" class="py-16 md:py-24 reveal">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Our Expertise</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We offer a full suite of services designed to build and grow your online presence.</p>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-white reveal">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Recent Work</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">A glimpse into the brands we've helped grow.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-gray-100 rounded-xl h-64 flex items-center justify-center text-gray-400 font-medium group cursor-pointer hover:bg-gray-200 transition">
+                    <span class="group-hover:scale-110 transition">Social Media Campaign</span>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Cards -->
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                        <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">❖</div>
-                        <h3 class="text-2xl font-semibold text-gray-800">Social Media Management</h3>
-                        <ul class="mt-4 text-gray-600 text-left space-y-2">
-                            <li>&#10003; Page Management</li>
-                            <li>&#10003; Content Creation</li>
-                            <li>&#10003; Community Engagement</li>
-                        </ul>
-                    </div>
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                        <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">◎</div>
-                        <h3 class="text-2xl font-semibold text-gray-800">Web Design</h3>
-                        <ul class="mt-4 text-gray-600 text-left space-y-2">
-                            <li>&#10003; AI-Assisted Design</li>
-                            <li>&#10003; Dynamic Site Building</li>
-                            <li>&#10003; Mobile-First Design</li>
-                        </ul>
-                    </div>
-                    <div class="service-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                        <div class="p-4 bg-blue-100 text-blue-600 rounded-full mb-4 text-4xl mx-auto">▶</div>
-                        <h3 class="text-2xl font-semibold text-gray-800">Video Production</h3>
-                        <ul class="mt-4 text-gray-600 text-left space-y-2">
-                            <li>&#10003; YouTube Editing</li>
-                            <li>&#10003; Reels & Shorts</li>
-                            <li>&#10003; Motion Graphics</li>
-                        </ul>
-                    </div>
+                <!-- Portfolio Item 2 -->
+                <div class="bg-gray-100 rounded-xl h-64 flex items-center justify-center text-gray-400 font-medium group cursor-pointer hover:bg-gray-200 transition">
+                    <span class="group-hover:scale-110 transition">E-Commerce Website</span>
+                </div>
+                <!-- Portfolio Item 3 -->
+                <div class="bg-gray-100 rounded-xl h-64 flex items-center justify-center text-gray-400 font-medium group cursor-pointer hover:bg-gray-200 transition">
+                    <span class="group-hover:scale-110 transition">Brand Promo Video</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-16 bg-blue-600 reveal">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-white">Client Success Stories</h2>
-                    <p class="mt-4 text-blue-100 max-w-2xl mx-auto">Don't just take our word for it.</p>
-                </div>
-                
-                <div class="relative max-w-4xl mx-auto">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-slide active bg-white p-8 md:p-10 rounded-2xl shadow-xl text-center">
-                        <div class="text-blue-500 text-4xl mb-4">❝</div>
-                        <p class="text-gray-700 text-lg md:text-xl italic mb-6">"VisionEdge completely transformed our online presence. Our lead volume has doubled since they took over our social media."</p>
-                        <div class="flex items-center justify-center space-x-4">
-                            <img src="mohan-1.jpg" class="rounded-full w-12 h-12" alt="Client">
-                            <div class="text-left">
-                                <div class="font-bold text-gray-900">Mohan Rishikesh M</div>
-                                <div class="text-sm text-gray-500">Founder & CEO, Vayuratha Private Limited</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-blue-600 reveal">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Client Success Stories</h2>
+                <p class="mt-4 text-blue-100 max-w-2xl mx-auto">Don't just take our word for it.</p>
             </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section id="pricing" class="bg-gray-100 py-16 md:py-24 reveal">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Simple Pricing</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Plans that grow with you.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Starter -->
-                    <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                        <h3 class="text-2xl font-semibold text-gray-800">Starter</h3>
-                        <div class="mt-6 mb-6">
-                            <span class="text-4xl font-bold text-gray-900">₹8k</span><span class="text-gray-500">/mo</span>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide active bg-white p-8 md:p-10 rounded-2xl shadow-xl text-center">
+                    <div class="text-blue-500 text-4xl mb-4">❝</div>
+                    <p class="text-gray-700 text-lg md:text-xl italic mb-6">"VisionEdge completely transformed our online presence. Our lead volume has doubled since they took over our social media."</p>
+                    <div class="flex items-center justify-center space-x-4">
+                        <img src="mohan-1.jpg" class="rounded-full w-12 h-12" alt="Client">
+                        <div class="text-left">
+                            <div class="font-bold text-gray-900">Mohan Rishikesh M</div>
+                            <div class="text-sm text-gray-500">Founder & CEO, Vayuratha Private Limited</div>
                         </div>
-                        <ul class="space-y-4 text-gray-600 text-left mb-8">
-                            <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 2 Platforms</li>
-                            <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 8 Posts/Month</li>
-                        </ul>
-                        <a href="#contact" class="mt-auto block w-full py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition">Choose Plan</a>
-                    </div>
-                    <!-- Growth -->
-                    <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center ring-2 ring-blue-500 relative">
-                        <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                            <span class="inline-flex items-center rounded-full bg-blue-500 px-4 py-1 text-sm font-medium text-white">Popular</span>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-800">Growth</h3>
-                        <div class="mt-6 mb-6">
-                            <span class="text-4xl font-bold text-gray-900">₹25k</span><span class="text-gray-500">/mo</span>
-                        </div>
-                        <ul class="space-y-4 text-gray-600 text-left mb-8">
-                            <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 3 Platforms</li>
-                            <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 15 Posts + 4 Videos</li>
-                        </ul>
-                        <a href="#contact" class="mt-auto block w-full py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition">Choose Plan</a>
-                    </div>
-                    <!-- Scale -->
-                    <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
-                        <h3 class="text-2xl font-semibold text-gray-800">Scale</h3>
-                        <div class="mt-6 mb-6">
-                            <span class="text-4xl font-bold text-gray-900">₹60k+</span><span class="text-gray-500">/mo</span>
-                        </div>
-                        <ul class="space-y-4 text-gray-600 text-left mb-8">
-                            <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Full Strategy</li>
-                            <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 25+ Posts + Ads</li>
-                        </ul>
-                        <a href="#contact" class="mt-auto block w-full py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition">Choose Plan</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="py-16 bg-white reveal">
-            <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+    <!-- Pricing Section -->
+    <section id="pricing" class="bg-gray-100 py-16 md:py-24 reveal">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Simple Pricing</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Plans that grow with you.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter -->
+                <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
+                    <h3 class="text-2xl font-semibold text-gray-800">Starter</h3>
+                    <div class="mt-6 mb-6">
+                        <span class="text-4xl font-bold text-gray-900">₹8k</span><span class="text-gray-500">/mo</span>
+                    </div>
+                    <ul class="space-y-4 text-gray-600 text-left mb-8">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 2 Platforms</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 8 Posts/Month</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto block w-full py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition">Choose Plan</a>
                 </div>
-                <div class="space-y-4">
-                    <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
-                        <summary class="flex justify-between items-center font-medium text-gray-800">
-                            <span>Do you require long-term contracts?</span>
-                            <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                            </span>
-                        </summary>
-                        <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
-                            No, we offer flexible month-to-month retainers. However, we recommend at least 3 months to see significant results from organic social growth.
-                        </p>
-                    </details>
-                    <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
-                        <summary class="flex justify-between items-center font-medium text-gray-800">
-                            <span>How quickly can we get started?</span>
-                            <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                            </span>
-                        </summary>
-                        <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
-                            Once we have our discovery call, we can usually start the onboarding process within 48 hours and have your first content calendar ready within a week.
-                        </p>
-                    </details>
-                    <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
-                        <summary class="flex justify-between items-center font-medium text-gray-800">
-                            <span>Do you handle ad budgets?</span>
-                            <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                            </span>
-                        </summary>
-                        <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
-                            Yes, our 'Scale' package includes ad management. The ad spend budget is paid directly by you to the platforms (Meta/Google), giving you full transparency.
-                        </p>
-                    </details>
+                <!-- Growth -->
+                <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center ring-2 ring-blue-500 relative">
+                     <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                        <span class="inline-flex items-center rounded-full bg-blue-500 px-4 py-1 text-sm font-medium text-white">Popular</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800">Growth</h3>
+                    <div class="mt-6 mb-6">
+                        <span class="text-4xl font-bold text-gray-900">₹25k</span><span class="text-gray-500">/mo</span>
+                    </div>
+                     <ul class="space-y-4 text-gray-600 text-left mb-8">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 3 Platforms</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 15 Posts + 4 Videos</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto block w-full py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition">Choose Plan</a>
+                </div>
+                <!-- Scale -->
+                <div class="pricing-card bg-white p-8 rounded-2xl shadow-md flex flex-col text-center">
+                    <h3 class="text-2xl font-semibold text-gray-800">Scale</h3>
+                    <div class="mt-6 mb-6">
+                        <span class="text-4xl font-bold text-gray-900">₹60k+</span><span class="text-gray-500">/mo</span>
+                    </div>
+                     <ul class="space-y-4 text-gray-600 text-left mb-8">
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> Full Strategy</li>
+                        <li class="flex items-center"><span class="text-blue-500 mr-2">✔</span> 25+ Posts + Ads</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto block w-full py-3 border border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition">Choose Plan</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="bg-gray-100 py-16 md:py-24 reveal">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Get in Touch</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Ready to elevate your brand? Send us a message.</p>
-                </div>
-                <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
-                    <!-- Standard HTML Form Submission -->
-                    <form id="contact-form" action="https://formsubmit.co/mithran@visionedge.online" method="POST" class="space-y-6">
-                        <!-- Config Fields -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_subject" value="New Contact Message from VisionEdge">
-                        
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
-                        </div>
-                        <div>
-                            <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile Number</label>
-                            <input type="tel" id="mobile" name="mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Project Details</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" id="submit-btn" class="contact-btn w-full px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
-                </div>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white reveal">
+        <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-white border-t border-gray-200 mt-12 py-12">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="text-center md:text-left">
-                        <span class="text-lg font-bold text-gray-800 flex items-center gap-2 justify-center md:justify-start">
-                            Vision<span class="text-blue-600">Edge</span>
+            <div class="space-y-4">
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-gray-800">
+                        <span>Do you require long-term contracts?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                         </span>
-                        <p class="text-sm text-gray-500 mt-1">Chennai, Tamil Nadu</p>
-                    </div>
+                    </summary>
+                    <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                        No, we offer flexible month-to-month retainers. However, we recommend at least 3 months to see significant results from organic social growth.
+                    </p>
+                </details>
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-gray-800">
+                        <span>How quickly can we get started?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                        Once we have our discovery call, we can usually start the onboarding process within 48 hours and have your first content calendar ready within a week.
+                    </p>
+                </details>
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-gray-800">
+                        <span>Do you handle ad budgets?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                        Yes, our 'Scale' package includes ad management. The ad spend budget is paid directly by you to the platforms (Meta/Google), giving you full transparency.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 py-16 md:py-24 reveal">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Get in Touch</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Ready to elevate your brand? Send us a message.</p>
+            </div>
+            <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
+                <!-- Standard HTML Form Submission -->
+                <form id="contact-form" action="https://formsubmit.co/mithran@visionedge.online" method="POST" class="space-y-6">
+                    <!-- Config Fields -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="New Contact Message from VisionEdge">
                     
-                    <!-- Legal Links (Opening Modals) -->
-                    <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-gray-500">
-                        <button onclick="openLegal('terms')" class="hover:text-blue-600 transition duration-300">Terms of Service</button>
-                        <button onclick="openLegal('privacy')" class="hover:text-blue-600 transition duration-300">Privacy Policy</button>
-                        <button onclick="openLegal('refund')" class="hover:text-blue-600 transition duration-300">Refund Policy</button>
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
                     </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Project Details</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id="submit-btn" class="contact-btn w-full px-8 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12 py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <span class="text-lg font-bold text-gray-800 flex items-center gap-2 justify-center md:justify-start">
+                        Vision<span class="text-blue-600">Edge</span>
+                    </span>
+                    <p class="text-sm text-gray-500 mt-1">Chennai, Tamil Nadu</p>
                 </div>
                 
-                <div class="border-t border-gray-100 mt-8 pt-8 text-center text-sm text-gray-400">
-                    <p>&copy; 2025 VisionEdge. All rights reserved.</p>
+                <!-- Legal Links (Opening Modals) -->
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-gray-500">
+                    <button onclick="openLegal('terms')" class="hover:text-blue-600 transition duration-300">Terms of Service</button>
+                    <button onclick="openLegal('privacy')" class="hover:text-blue-600 transition duration-300">Privacy Policy</button>
+                    <button onclick="openLegal('refund')" class="hover:text-blue-600 transition duration-300">Refund Policy</button>
                 </div>
             </div>
-        </footer>
-    </main>
+            
+            <div class="border-t border-gray-100 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 VisionEdge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Feature 5: Replacement Booking Modal (No more Calendly) -->
     <div id="booking-modal" class="fixed inset-0 bg-gray-900 bg-opacity-90 hidden z-[60] flex items-center justify-center p-4">
