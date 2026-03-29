@@ -165,7 +165,7 @@
             </button>
         </nav>
         
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t border-gray-50 md:hidden overflow-hidden transition-all duration-300">
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t border-gray-100 md:hidden overflow-hidden transition-all duration-300">
             <div class="px-6 py-10 flex flex-col space-y-8 text-center">
                 <a href="#services" class="text-xl font-bold text-gray-800">Our Expertise</a>
                 <a href="#portfolio" class="text-xl font-bold text-gray-800">Recent Portfolio</a>
@@ -276,7 +276,7 @@
                         <img src="How-Google-Ads-Work.jpg" alt="Google Ads" class="w-full h-full object-cover">
                     </div>
                     <div class="flex items-center gap-4 mb-4">
-                        <span class="w-10 h-10 shrink-0 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl">G</span>
+                        <span class="w-10 h-10 shrink-0 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl text-center leading-none">G</span>
                         <h3 class="text-xl font-bold text-gray-900">Google Ads</h3>
                     </div>
                     <ul class="text-gray-600 space-y-3 mb-6 flex-grow text-sm md:text-base leading-relaxed">
@@ -340,21 +340,21 @@
                 <h2 class="text-3xl md:text-4xl font-extrabold text-white text-center">Trust is Earned.</h2>
             </div>
             
-            <div class="mb-16 bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-white/10 mx-2 md:mx-0">
+            <div class="mb-16 bg-white rounded-[2rem] py-8 md:py-14 shadow-2xl overflow-hidden border border-white/10 mx-2 md:mx-0">
                 <div class="marquee-container">
                     <div class="marquee-content">
                         <!-- Update these SRCs with your logo paths -->
-                        <div class="client-logo-item"><img src="logo.png" alt="Vayuratha" onerror="this.src='https://via.placeholder.com/200x100?text=Logo+1'"></div>
-                        <div class="client-logo-item"><img src="daloft_trans.jpg.webp" alt="Client 2" onerror="this.src='https://via.placeholder.com/200x100?text=Logo+2'"></div>
-                        <div class="client-logo-item"><img src="Asset_1.webp" alt="Client 3" onerror="this.src='https://via.placeholder.com/200x100?text=Logo+3'"></div>
-                        <div class="client-logo-item"><img src="GIIL-LOGO.png" alt="Client 4" onerror="this.src='https://via.placeholder.com/200x100?text=Logo+4'"></div>
-                        <div class="client-logo-item"><img src="Saai media Logo 2-min.webp" alt="Client 5" onerror="this.src='https://via.placeholder.com/200x100?text=Logo+5'"></div>
-                        <!-- Duplicates for loop -->
-                        <div class="client-logo-item"><img src="logo.png" alt="Logo 1"></div>
-                        <div class="client-logo-item"><img src="daloft_trans.jpg.webp" alt="Logo 2"></div>
-                        <div class="client-logo-item"><img src="Asset_1.webp" alt="Logo 3"></div>
-                        <div class="client-logo-item"><img src="GIIL-LOGO.png" alt="Logo 4"></div>
-                        <div class="client-logo-item"><img src="Saai media Logo 2-min.webp" alt="Logo 5"></div>
+                        <div class="client-logo-item"><img src="logo.png" alt="Client 1"></div>
+                        <div class="client-logo-item"><img src="daloft_trans.jpg.webp" alt="Client 2"></div>
+                        <div class="client-logo-item"><img src="Asset_1.webp" alt="Client 3"></div>
+                        <div class="client-logo-item"><img src="GIIL-LOGO.png" alt="Client 4"></div>
+                        <div class="client-logo-item"><img src="Saai media Logo 2-min.webp" alt="Client 5"></div>
+                        <!-- Duplicates -->
+                        <div class="client-logo-item"><img src="logo.png" alt="Client 1"></div>
+                        <div class="client-logo-item"><img src="daloft_trans.jpg.webp" alt="Client 2"></div>
+                        <div class="client-logo-item"><img src="Asset_1.webp" alt="Client 3"></div>
+                        <div class="client-logo-item"><img src="GIIL-LOGO.png" alt="Client 4"></div>
+                        <div class="client-logo-item"><img src="Saai media Logo 2-min.webp" alt="Client 5"></div>
                     </div>
                 </div>
             </div>
@@ -444,7 +444,7 @@
                         </div>
                         <div class="flex items-center gap-5">
                             <span class="bg-white/20 p-3 rounded-2xl text-xl">📧</span>
-                            <span class="font-bold text-lg break-all">mithran@visionedge.online</span>
+                            <span class="font-bold text-sm break-all">mithran@visionedge.online</span>
                         </div>
                     </div>
                 </div>
@@ -453,20 +453,20 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-2 ml-1">Your Name</label>
-                                <input type="text" name="name" required class="w-full px-6 py-5 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-blue-600 outline-none transition duration-300 placeholder-gray-300" placeholder="Full Name">
+                                <input type="text" id="name" name="name" required class="w-full px-6 py-5 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-blue-600 outline-none transition duration-300 placeholder-gray-300" placeholder="Full Name">
                             </div>
                             <div>
                                 <label class="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-2 ml-1">Phone Number</label>
-                                <input type="tel" name="mobile" required class="w-full px-6 py-5 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-blue-600 outline-none transition duration-300 placeholder-gray-300" placeholder="+91 ...">
+                                <input type="tel" id="mobile" name="mobile" required class="w-full px-6 py-5 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-blue-600 outline-none transition duration-300 placeholder-gray-300" placeholder="+91 ...">
                             </div>
                         </div>
                         <div>
                             <label class="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-2 ml-1">Email Address</label>
-                            <input type="email" name="email" required class="w-full px-6 py-5 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-blue-600 outline-none transition duration-300 placeholder-gray-300" placeholder="hello@brand.com">
+                            <input type="email" id="email" name="email" required class="w-full px-6 py-5 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-blue-600 outline-none transition duration-300 placeholder-gray-300" placeholder="hello@brand.com">
                         </div>
                         <div>
                             <label class="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-2 ml-1">Project Details</label>
-                            <textarea name="message" rows="4" required class="w-full px-6 py-5 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-blue-600 outline-none transition duration-300 placeholder-gray-300" placeholder="Tell us about your project goals..."></textarea>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-6 py-5 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-blue-600 outline-none transition duration-300 placeholder-gray-300" placeholder="Tell us about your project goals..."></textarea>
                         </div>
                         <button type="submit" class="w-full py-6 bg-blue-600 text-white font-black text-lg rounded-2xl shadow-2xl shadow-blue-600/30 hover:bg-blue-700 transition transform active:scale-95">Send Message</button>
                     </form>
@@ -485,21 +485,21 @@
                     <text x="48" y="28" font-family="'Inter', sans-serif" font-weight="800" font-size="24" fill="#1f2937">Vision<tspan fill="#2563eb">Edge</tspan></text>
                 </svg>
             </div>
-            <div class="flex flex-wrap justify-center gap-x-10 gap-y-6 text-xs font-black text-gray-400 uppercase tracking-[0.25em] mb-12">
+            <div class="flex flex-wrap justify-center gap-x-10 gap-y-6 text-xs font-black text-gray-400 uppercase tracking-[0.25em] mb-12 text-center px-4">
                 <button onclick="openLegal('terms')" class="hover:text-blue-600 transition">Terms of Service</button>
                 <button onclick="openLegal('privacy')" class="hover:text-blue-600 transition">Privacy Policy</button>
                 <button onclick="openLegal('refund')" class="hover:text-blue-600 transition">Refunds</button>
             </div>
-            <p class="text-sm text-gray-400 font-medium">© 2025 VisionEdge Group. Built for the modern digital era.</p>
+            <p class="text-sm text-gray-400 font-medium"> © 2026 VisionEdge. Built for the Modern Digital Era.</p>
         </div>
     </footer>
 
     <!-- Callback Modal -->
     <div id="booking-modal" class="fixed inset-0 bg-gray-900/95 backdrop-blur-md hidden z-[60] flex items-center justify-center p-4">
         <div class="bg-white rounded-[2.5rem] w-full max-w-lg flex flex-col relative overflow-hidden shadow-2xl">
-            <button onclick="closeBooking()" class="absolute top-4 right-6 text-gray-300 hover:text-gray-900 text-5xl font-light z-10 transition">&times;</button>
+            <button onclick="closeBooking()" class="absolute top-6 right-8 text-gray-300 hover:text-gray-900 text-5xl font-light z-10 transition">&times;</button>
             <div class="p-8 md:p-14 overflow-y-auto max-h-[90vh] no-scrollbar">
-                <div class="text-center mb-10">
+                <div class="text-center mb-10 px-4">
                     <h3 class="text-3xl font-black text-gray-900">Get a Callback</h3>
                     <p class="text-gray-500 mt-2 font-medium">We'll reach out within your preferred window.</p>
                 </div>
@@ -525,16 +525,16 @@
                         <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 ml-1">Call Window</label>
                         <div class="grid grid-cols-3 gap-3">
                             <div class="relative">
-                                <input type="radio" name="Time" id="t-am" value="Morning" class="peer hidden" checked>
-                                <label for="t-am" class="block text-center py-4 border-2 border-gray-100 rounded-2xl cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50 text-xs font-black transition">AM</label>
+                                <input type="radio" name="Time" id="time-morning" value="Morning" class="peer hidden" checked>
+                                <label for="time-morning" class="block text-center py-4 border-2 border-gray-100 rounded-2xl cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50 text-xs font-black transition">AM</label>
                             </div>
                             <div class="relative">
-                                <input type="radio" name="Time" id="t-pm" value="Afternoon" class="peer hidden">
-                                <label for="t-pm" class="block text-center py-4 border-2 border-gray-100 rounded-2xl cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50 text-xs font-black transition">PM</label>
+                                <input type="radio" name="Time" id="time-afternoon" value="Afternoon" class="peer hidden">
+                                <label for="time-afternoon" class="block text-center py-4 border-2 border-gray-100 rounded-2xl cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50 text-xs font-black transition">PM</label>
                             </div>
                             <div class="relative">
-                                <input type="radio" name="Time" id="t-late" value="Evening" class="peer hidden">
-                                <label for="t-late" class="block text-center py-4 border-2 border-gray-100 rounded-2xl cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50 text-xs font-black transition">Late</label>
+                                <input type="radio" name="Time" id="time-evening" value="Evening" class="peer hidden">
+                                <label for="time-evening" class="block text-center py-4 border-2 border-gray-100 rounded-2xl cursor-pointer peer-checked:border-blue-600 peer-checked:bg-blue-50 text-xs font-black transition">Late</label>
                             </div>
                         </div>
                     </div>
